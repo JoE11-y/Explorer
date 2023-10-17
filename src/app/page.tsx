@@ -1,113 +1,163 @@
-import Image from 'next/image'
-
-export default function Home() {
+import Link from "next/link";
+import Image from "next/image";
+import { BasicModal } from "@/components/BasicModal";
+import { NewDatabase } from "@/components/NewDatabase";
+import { InsertDocument } from "@/components/InsertDocument";
+import { Icons } from "@/components/Icons";
+type Props = {
+  searchParams: Record<string, string> | null | undefined;
+};
+export default function Page({ searchParams }: Props) {
+  const showModal = searchParams?.newDatabaseModal;
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <div className="absolute">
+        <div className="flex flex-col w-[1104px] items-start gap-[24px] absolute top-0 left-0">
+          <div className="flex items-start gap-[24px] relative self-stretch w-full flex-[0_0_auto]">
+            <div className="relative flex-1 mt-[-1.00px] font-title font-[number:var(--title-font-weight)] text-colors-body-primary text-[length:var(--title-font-size)] tracking-[var(--title-letter-spacing)] leading-[var(--title-line-height)] [font-style:var(--title-font-style)]">
+              Orochi’s space
+            </div>
+            {/* <div className="inline-flex items-center gap-[8px] relative flex-[0_0_auto]">
+              <div className="inline-flex items-start relative flex-[0_0_auto]">
+                <NavButton
+                  className="!flex-[0_0_auto]"
+                  icon={
+                    <PhosphoreIcons15 className="!relative !w-[20px] !h-[20px]" />
+                  }
+                  status="active"
+                  text={false}
+                />
+                <NavButton
+                  className="!flex-[0_0_auto]"
+                  icon={
+                    <PhosphoreIcons14 className="!relative !w-[20px] !h-[20px]" />
+                  }
+                  status="default"
+                  text={false}
+                />
+              </div>
+              <div className="relative w-px h-[16px] bg-colors-body-secondary rounded-[8px]" />
+              <NavButton
+                className="!flex-[0_0_auto]"
+                icon={
+                  <PhosphoreIcons13 className="!relative !w-[20px] !h-[20px]" />
+                }
+                status="default"
+                text1="Most recent"
+              />
+            </div> */}
+          </div>
+          <div className="flex items-start gap-[15px] relative self-stretch w-full flex-[0_0_auto]">
+            <div className="border-[1.5px] border-solid border-colors-dividers w-[358px] flex items-center gap-[12px] p-[12px] rounded-[10px] relative">
+              <Icons.NewDatabase className="!relative !w-[20px] !h-[20px]" />
+              <div className="flex flex-col items-start grow flex-1 relative">
+                <div className="!font-nunito self-stretch mt-[-1.00px] tracking-[0] text-[14px] text-[#192431] font-semibold leading-[normal] relative">
+                  New Database
+                </div>
+                <div className="!font-quicksand self-stretch tracking-[0] text-[10px] text-colors-body-secondary font-semibold leading-[normal] relative">
+                  <p>Create or import new data</p>
+                </div>
+              </div>
+            </div>
+            <div className="border-[1.5px] border-solid border-colors-dividers w-[358px] flex items-center gap-[12px] p-[12px] rounded-[10px] relative">
+              <Icons.NewQuery className="!relative !w-[20px] !h-[20px]" />
+              <div className="flex flex-col items-start grow flex-1 relative">
+                <div className="!font-nunito self-stretch mt-[-1.00px] tracking-[0] text-[14px] text-[#192431] font-semibold leading-[normal] relative">
+                  New Query
+                </div>
+                <div className="!font-quicksand self-stretch tracking-[0] text-[10px] text-colors-body-secondary font-semibold leading-[normal] relative">
+                  <p>Start saving your aggregations</p>
+                </div>
+              </div>
+            </div>
+            <div className="border-[1.5px] border-solid border-colors-dividers w-[358px] flex items-center gap-[12px] p-[12px] rounded-[10px] relative">
+              <Icons.Template className="!relative !w-[20px] !h-[20px]" />
+              <div className="flex flex-col items-start grow flex-1 relative">
+                <div className="!font-nunito self-stretch mt-[-1.00px] tracking-[0] text-[14px] text-[#192431] font-semibold leading-[normal] relative">
+                  Templates
+                </div>
+                <div className="!font-quicksand self-stretch tracking-[0] text-[10px] text-colors-body-secondary font-semibold leading-[normal] relative">
+                  <p>Browse and pick a template</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-start shadow-[0px_0px_12px_1px_#1924310a] p-[24px] relative w-[1104px] flex-col rounded-[18px] gap-[24px] bg-white overflow-hidden">
+            <>
+              <div className="font-section-title self-stretch tracking-[var(--section-title-letter-spacing)] text-[length:var(--section-title-font-size)] [font-style:var(--section-title-font-style)] flex-1 font-[number:var(--section-title-font-weight)] leading-[var(--section-title-line-height)] relative">
+                admin
+              </div>
+              <div className="w-full flex self-stretch items-start gap-[64px] flex-[0_0_auto] relative">
+                <div className="flex flex-col items-start grow flex-1 relative">
+                  <div className="font-body-highlight self-stretch mt-[-1.00px] tracking-[var(--body-highlight-letter-spacing)] text-[length:var(--body-highlight-font-size)] [font-style:var(--body-highlight-font-style)] text-colors-body-primary font-[number:var(--body-highlight-font-weight)] leading-[var(--body-highlight-line-height)] relative">
+                    Storage size
+                  </div>
+                  <div className="font-body self-stretch tracking-[var(--body-letter-spacing)] [font-style:var(--body-font-style)] text-[length:var(--body-font-size)] text-colors-body-primary font-[number:var(--body-font-weight)] leading-[var(--body-line-height)] relative">
+                    0 B
+                  </div>
+                </div>
+                <div className="flex flex-col items-start grow flex-1 relative">
+                  <div className="font-body-highlight self-stretch mt-[-1.00px] tracking-[var(--body-highlight-letter-spacing)] text-[length:var(--body-highlight-font-size)] [font-style:var(--body-highlight-font-style)] text-colors-body-primary font-[number:var(--body-highlight-font-weight)] leading-[var(--body-highlight-line-height)] relative">
+                    Collections
+                  </div>
+                  <div className="font-body self-stretch tracking-[var(--body-letter-spacing)] [font-style:var(--body-font-style)] text-[length:var(--body-font-size)] text-colors-body-primary font-[number:var(--body-font-weight)] leading-[var(--body-line-height)] relative">
+                    0 B
+                  </div>
+                </div>
+                <div className="flex flex-col items-start grow flex-1 relative">
+                  <div className="font-body-highlight self-stretch mt-[-1.00px] tracking-[var(--body-highlight-letter-spacing)] text-[length:var(--body-highlight-font-size)] [font-style:var(--body-highlight-font-style)] text-colors-body-primary font-[number:var(--body-highlight-font-weight)] leading-[var(--body-highlight-line-height)] relative">
+                    Indexes
+                  </div>
+                  <div className="font-body self-stretch tracking-[var(--body-letter-spacing)] [font-style:var(--body-font-style)] text-[length:var(--body-font-size)] text-colors-body-primary font-[number:var(--body-font-weight)] leading-[var(--body-line-height)] relative">
+                    0
+                  </div>
+                </div>
+              </div>
+              <Icons.dBIcon className="!absolute !w-[32px] !h-[32px] !top-[24px] !left-[1048px]" />
+            </>
+          </div>
+          <div className="flex items-start shadow-[0px_0px_12px_1px_#1924310a] p-[24px] relative w-[1104px] flex-col rounded-[18px] gap-[24px] bg-white overflow-hidden">
+            <>
+              <>
+                <div className="w-full flex self-stretch flex-col items-start gap-[4px] flex-[0_0_auto] relative">
+                  {/* <Tag
+              className="!bg-colors-dividers"
+              color="gray"
+              divClassName="!mt-[-5.00px] !text-colors-body-primary !tracking-[0] !text-[12px] !mb-[-3.00px] !flex-1 ![font-style:unset] !font-bold ![font-family:'Nunito',Helvetica] !leading-[24px] !w-[unset]"
+              text=".FIND"
+            /> */}
+                  <div className="font-section-title self-stretch tracking-[var(--section-title-letter-spacing)] [font-style:var(--section-title-font-style)] text-[length:var(--section-title-font-size)] flex-1 font-[number:var(--section-title-font-weight)] leading-[var(--section-title-line-height)] relative">
+                    Swords
+                  </div>
+                </div>
+                <div className="inline-flex flex-col items-start gap-[16px] flex-[0_0_auto] relative">
+                  <div className="inline-flex items-start gap-[4px] flex-[0_0_auto] relative">
+                    <Icons.DB
+                      className="!relative !w-[20px] !h-[20px]"
+                      color="#192431"
+                    />
+                    <div className="[font-family:'Nunito',Helvetica] w-fit mt-[-1.00px] tracking-[0] text-[14px] text-colors-body-primary font-medium leading-[normal] relative">
+                      sample_game
+                    </div>
+                  </div>
+                  <div className="inline-flex items-start gap-[4px] flex-[0_0_auto] relative">
+                    <Icons.Folder className="!relative !w-[20px] !h-[20px]" />
+                    <div className="[font-family:'Nunito',Helvetica] w-fit mt-[-1.00px] tracking-[0] text-[14px] text-colors-body-primary font-medium leading-[normal] relative">
+                      weapons
+                    </div>
+                  </div>
+                </div>
+                <p className="[font-family:'Quicksand',Helvetica] w-fit tracking-[0] text-[10px] text-colors-body-secondary font-semibold leading-[normal] relative">
+                  Last modified 1 hour ago
+                </p>
+                <Icons.curlyIcon className="!absolute !w-[32px] !h-[32px] !top-[24px] !left-[1048px]" />
+              </>
+            </>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      {showModal && <NewDatabase />}
+    </>
+  );
 }
