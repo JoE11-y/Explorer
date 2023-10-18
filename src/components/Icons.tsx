@@ -560,4 +560,121 @@ export const Icons = {
       />
     </svg>
   ),
+  Column: (props: LucideProps) => (
+    <svg
+      {...props}
+      fill="none"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3.125 10H16.875"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M3.125 5H16.875"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M3.125 15H16.875"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
+  Grid: (props: LucideProps) => (
+    <svg
+      {...props}
+      fill="none"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.75 3.75H3.75V8.75H8.75V3.75Z"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M16.25 3.75H11.25V8.75H16.25V3.75Z"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M8.75 11.25H3.75V16.25H8.75V11.25Z"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M16.25 11.25H11.25V16.25H16.25V11.25Z"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
+  Recent: (props: LucideProps) => (
+    <svg
+      {...props}
+      fill="none"
+      height="20"
+      viewBox="0 0 20 20"
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.25 13.125L14.375 16.25L17.5 13.125"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M14.375 8.75V16.25"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M3.75 10H9.375"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M3.75 5H14.375"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M3.75 15H8.125"
+        stroke="#192431"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
 };

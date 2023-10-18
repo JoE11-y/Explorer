@@ -21,12 +21,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${quicksand.variable}, ${nunito.variable}`}>
+      <body
+        className={`${quicksand.variable} ${nunito.variable} m-0 h-full w-full`}
+      >
         <main className="min-h-screen bg-colors-background">
-          <div className="flex items-center min-h-screen center-center justify-center">
-            <div className="flex items-center center-center">
+          <div className="flex min-h-screen justify-center self-stretch">
+            <div className="flex items-center center-center mt-4 ml-4 mb-16">
               <NavBar />
-              <div className="flex-auto w-[1104px] h-[765px] p-10">
+              <div className="flex-auto min-w-[1104px] min-h-[765px] p-10 ">
                 <div className="absolute flex justify-center items-center w-[1104px] h-[765px]">
                   <Image
                     className="absolute w-[544px] h-[593px]"
@@ -36,7 +38,7 @@ export default function RootLayout({
                     src="/assets/images/vector-1.svg"
                   />
                 </div>
-                <div className="z-10">{children}</div>
+                <div className="z-10 mt-6">{children}</div>
               </div>
             </div>
           </div>
