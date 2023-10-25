@@ -3,6 +3,10 @@
 import CodeMirror from "@uiw/react-codemirror";
 import { markdown, markdownLanguage } from "@codemirror/lang-markdown";
 import { languages } from "@codemirror/language-data";
+import { bbedit } from "@uiw/codemirror-theme-bbedit";
+import { javascript } from "@codemirror/lang-javascript";
+import { json } from "@codemirror/lang-json";
+import clsx from "clsx";
 
 const code = `/**
 * Paste one or more documents here
@@ -16,16 +20,21 @@ const code = `/**
   }
 }`;
 
-export default function Editor() {
+interface Props {
+  className: string;
+}
+
+export function Editor({ className }: Props) {
   return (
     <CodeMirror
       value={code}
-      theme="light"
-      width="670px"
-      height="190px"
+      theme={bbedit}
       onChange={() => {}}
+      className={clsx(className)}
       extensions={[
+        json(),
         markdown({ base: markdownLanguage, codeLanguages: languages }),
+        javascript({ jsx: true }),
       ]}
     />
   );

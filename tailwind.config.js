@@ -22,6 +22,7 @@ module.exports = {
         underline: "var(--underline-font-family)",
         quicksand: ["var(--font-quicksand)"],
         nunito: ["var(--font-nunito)", "Helvetica"],
+        sourcecode: ["var(--font-sourcecode)", "Helvetica"],
       },
     },
   },

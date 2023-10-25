@@ -1,5 +1,4 @@
 import { NavBar } from "@/components/NavBar";
-import Image from "next/image";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
@@ -7,7 +6,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       <div className="flex flex-row justify-center center-center">
         <NavBar />
         <div
-          className="p-6 bg-center bg-no-repeat"
+          className="p-6 bg-bottom bg-no-repeat w-[1280px] max-w-screen-xl"
           style={{
             backgroundImage: `url('/assets/images/vector-1.svg')`,
           }}
