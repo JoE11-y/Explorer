@@ -2,9 +2,9 @@
 import { Button } from "@/components/Button";
 import { Filter } from "@/components/Filter";
 import { DashboardMenu } from "@/components/DashboardMenu";
-import { DocumentData } from "./DocumentCard";
 import { useState } from "react";
 import clsx from "clsx";
+import { DocumentView } from "./DocumentView";
 
 export const DatabaseDashboard = (): JSX.Element => {
   type menu = "doc" | "agg" | "sch" | "ind" | "val";
@@ -12,7 +12,7 @@ export const DatabaseDashboard = (): JSX.Element => {
 
   const checkTab = (tab: menu) => {
     if (currentTab == tab) {
-      return "!border-b-colors-primary !border-b-2 !rounded-none !text-colors-body-primary !text-[length:var(--body-highlight-font-size)] !font-bold";
+      return "!border-b-colors-primary !border-b-2 !rounded-none !text-colors-body-primary !font-bold";
     } else {
       return null;
     }
@@ -27,7 +27,7 @@ export const DatabaseDashboard = (): JSX.Element => {
       <div className="flex items-center gap-6 self-stretch w-full border-b [border-bottom-style:solid] border-colors-dividers">
         <Button
           className={clsx(
-            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap text-base font-normal",
+            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap !text-base",
             checkTab("doc")
           )}
           btntype="nav"
@@ -37,7 +37,7 @@ export const DatabaseDashboard = (): JSX.Element => {
         </Button>
         <Button
           className={clsx(
-            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap text-base font-normal",
+            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap !text-base",
             checkTab("agg")
           )}
           btntype="nav"
@@ -47,7 +47,7 @@ export const DatabaseDashboard = (): JSX.Element => {
         </Button>
         <Button
           className={clsx(
-            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap text-base font-normal",
+            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap !text-base",
             checkTab("sch")
           )}
           btntype="nav"
@@ -58,7 +58,7 @@ export const DatabaseDashboard = (): JSX.Element => {
 
         <Button
           className={clsx(
-            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap text-base font-normal",
+            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap !text-base",
             checkTab("ind")
           )}
           btntype="nav"
@@ -68,7 +68,7 @@ export const DatabaseDashboard = (): JSX.Element => {
         </Button>
         <Button
           className={clsx(
-            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap text-base font-normal",
+            "relative inline-flex flex-col items-start gap-1 font-quicksand text-colors-body-secondary whitespace-nowrap !text-base",
             checkTab("val")
           )}
           btntype="nav"
@@ -80,7 +80,7 @@ export const DatabaseDashboard = (): JSX.Element => {
       <Filter />
       <DashboardMenu />
 
-      {currentTab == "doc" && <DocumentData />}
+      {currentTab == "doc" && <DocumentView />}
     </>
   );
 };

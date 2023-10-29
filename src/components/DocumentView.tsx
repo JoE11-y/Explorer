@@ -7,7 +7,7 @@ import { Editor } from "@/components/Editor";
 import { DocumentData } from "./DocumentCard";
 import { useState } from "react";
 
-export const Document = (): JSX.Element => {
-  const data = true;
+export const DocumentView = (): JSX.Element => {
+  const data = false;
   return <>{data ? <DocumentData /> : <NoData />}</>;
 };

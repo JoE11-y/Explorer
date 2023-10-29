@@ -1,7 +1,7 @@
 import { NewDatabase } from "@/components/NewDatabase";
+import { InsertDocument } from "@/components/InsertDocument";
 import { DatabaseDashboard } from "@/components/DatabaseDashboard";
 import { Sorter } from "@/components/Sorter";
-import { TestTab } from "@/components/TestTab";
 
 type Props = {
   searchParams: Record<string, string> | null | undefined;
@@ -9,6 +9,7 @@ type Props = {
 
 export default function Page({ searchParams }: Props) {
   const showModal = searchParams?.newDatabaseModal;
+  const showModal1 = searchParams?.insertDocument;
   return (
     <>
       <div className="flex flex-col items-start self-stretch w-full gap-6 mt-2">
@@ -26,6 +27,7 @@ export default function Page({ searchParams }: Props) {
         <DatabaseDashboard />
       </div>
       {showModal && <NewDatabase />}
+      {showModal1 && <InsertDocument />}
     </>
   );
 }

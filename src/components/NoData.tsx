@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Button } from "./Button";
 import { Icons } from "./Icons";
 
@@ -14,7 +15,9 @@ export const NoData = (): JSX.Element => {
           Import data from a JSON or CSV file in a few seconds
         </span>
       </div>
-      <Button variant="primary">Import Data</Button>
+      <Link href="/?insertDocument=true">
+        <Button variant="primary">Import Data</Button>
+      </Link>
     </div>
   );
 };

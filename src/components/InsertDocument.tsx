@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Editor } from "./Editor";
-// import { Button } from "./Buttons";
 import { Button } from "./Button";
 import { Icons } from "./Icons";
 
@@ -31,7 +30,7 @@ export const InsertDocument = (): JSX.Element => {
               <div className="relative flex-1 mt-[-1.00px] font-title font-[number:var(--title-font-weight)] text-colors-body-primary text-[length:var(--title-font-size)] tracking-[var(--title-letter-spacing)] leading-[var(--title-line-height)] [font-style:var(--title-font-style)]">
                 Insert Document
               </div>
-              <Link href="/">
+              <Link href="/collections">
                 <Button btntype="nav">
                   <Icons.Close className="!relative !w-[20px] !h-[20px]" />
                 </Button>
@@ -62,10 +61,10 @@ export const InsertDocument = (): JSX.Element => {
             </Button>
           </div>
           <div className="flex flex-col items-start self-stretch w-full bg-colors-background relative flex-[0_0_auto]">
-            <Editor className="h-[670px] w-[190px]" />
+            <Editor className="h-[190px] w-[500px]" />
           </div>
           <div className="flex items-center justify-end gap-[16px] self-stretch w-full relative flex-[0_0_auto]">
-            <Link href="/">
+            <Link href="/collections">
               <Button variant="secondary" className="!border">
                 Cancel
               </Button>
