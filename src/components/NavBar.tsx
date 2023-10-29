@@ -8,7 +8,7 @@ export const NavBar = (): JSX.Element => {
   const dbs = ["admin", "game", "users"];
   return (
     <>
-      <div className="flex flex-col relative w-[262px] h-[804px] bg-colors-background rounded-[18px] overflow-hidden border border-solid border-colors-dividers shadow-[0px_0px_12px_1px_#1924310a] gap-2 items-center">
+      <div className="flex flex-col relative  bg-colors-background rounded-[18px] overflow-hidden border border-solid border-colors-dividers shadow-[0px_0px_12px_1px_#1924310a] gap-2 items-center">
         <div className="w-[230px] p-[16px] [background:linear-gradient(180deg,rgb(187,49,53)_0%,rgb(237,69,37)_38.54%,rgb(238,97,73)_100%)] flex items-center gap-[8px] top-0 left-0">
           <Icons.Logo className="relative w-[26.25px] h-[20px]" />
           <div className="relative flex-1 mt-[-1.00px] font-nunito font-[number:var(--subtitle-font-weight)] text-colors-background text-[length:var(--subtitle-font-size)] tracking-[var(--subtitle-letter-spacing)] leading-[var(--subtitle-line-height)] overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical] [font-style:var(--subtitle-font-style)]">
