@@ -54,7 +54,7 @@ export const NewDatabase = (): JSX.Element => {
           </div>
           <div className="items-center justify-end gap-[16px] self-stretch w-full flex relative flex-[0_0_auto]">
             <Link href="/">
-              <Button className="!flex-[0_0_auto]" variant="secondary">
+              <Button className="!flex-[0_0_auto] !border" variant="secondary">
                 Cancel
               </Button>
             </Link>

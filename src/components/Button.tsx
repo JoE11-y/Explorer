@@ -46,7 +46,7 @@ const getBtnType = (btntype: ButtonType) => {
     case "btn":
       return "gap-2 px-4 h-8 justify-center w-fit font-bold text-center whitespace-nowrap leading-4";
     case "nav":
-      return "gap-[4px] p-[8px] h-10 hover:bg-colors-dividers text-colors-body-primary font-medium leading-normal";
+      return "gap-1 p-2 h-10 hover:bg-colors-dividers text-colors-body-primary font-medium leading-normal";
     default:
       return undefined;
   }
@@ -64,7 +64,7 @@ export const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
   } = props;
 
   const merged = clsx(
-    "btn inline-flex border-0 items-center rounded-lg relative font-nunito tracking-normal text-[14px]",
+    "btn inline-flex border-0 items-center rounded-lg relative font-nunito tracking-normal text-size14",
     getBtnType(btntype),
     getVariant(variant),
     getStatus(status),

@@ -66,7 +66,9 @@ export const InsertDocument = (): JSX.Element => {
           </div>
           <div className="flex items-center justify-end gap-[16px] self-stretch w-full relative flex-[0_0_auto]">
             <Link href="/">
-              <Button variant="secondary">Cancel</Button>
+              <Button variant="secondary" className="!border">
+                Cancel
+              </Button>
             </Link>
             <Button variant="primary">Insert</Button>
           </div>

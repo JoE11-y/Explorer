@@ -24,6 +24,10 @@ module.exports = {
         nunito: ["var(--font-nunito)", "Helvetica"],
         sourcecode: ["var(--font-sourcecode)", "Helvetica"],
       },
+      fontSize: {
+        size14: "14px",
+        size10: "10px",
+      },
     },
   },
   plugins: [],
