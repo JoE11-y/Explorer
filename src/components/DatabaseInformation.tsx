@@ -8,7 +8,7 @@ export const DatabaseInformation = (): JSX.Element => {
           <div className=" font-nunito text-[#EC4525] tracking-[var(--section-title-letter-spacing)] text-[length:var(--section-title-font-size)] [font-style:var(--section-title-font-style)] flex-1 font-[number:var(--section-title-font-weight)] leading-[var(--section-title-line-height)]">
             admin
           </div>
-          <Icons.dBIcon className="relative w-[32px] h-[32px] top-0 right-0" />
+          <Icons.dBIcon className="relative top-0 right-0 w-8 h-8" />
         </div>
         <div className="relative flex flex-row items-start gap-16">
           <div className="relative flex flex-col items-start flex-1 grow">

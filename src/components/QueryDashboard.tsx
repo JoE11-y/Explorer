@@ -3,7 +3,7 @@ import { Icons } from "./Icons";
 export const QueryDashboard = (): JSX.Element => {
   return (
     <div className="flex items-start self-stretch shadow-[0px_0px_12px_1px_#1924310a] relative w-full rounded-2xl bg-white">
-      <div className="flex flex-col self-stretch gap-6 p-6">
+      <div className="flex flex-col self-stretch w-full gap-6 p-6">
         <div className="relative flex flex-col items-start self-stretch gap-1">
           <div className="flex flex-row self-stretch justify-between">
             <div className="inline-flex items-center gap-2 px-2 py-1 h-6 rounded-[4px] relative !bg-colors-dividers ">

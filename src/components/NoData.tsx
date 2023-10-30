@@ -1,9 +1,12 @@
+"use client";
 import React from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "./Button";
 import { Icons } from "./Icons";
 
 export const NoData = (): JSX.Element => {
+  const pathname = usePathname();
   return (
     <div className="inline-flex flex-col items-center gap-[24px] self-stretch w-full pt-[80px]">
       <Icons.Document className="w-[64px] h-[64px]" color="#BF2F02" />
@@ -15,7 +18,7 @@ export const NoData = (): JSX.Element => {
           Import data from a JSON or CSV file in a few seconds
         </span>
       </div>
-      <Link href="/?insertDocument=true">
+      <Link href={`${pathname}/?insertDocument=true`}>
         <Button variant="primary">Import Data</Button>
       </Link>
     </div>

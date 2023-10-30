@@ -37,22 +37,23 @@ export const DBItem = ({ dbName }: Props): JSX.Element => {
 
   return (
     <>
-      <div
-        className="relative flex items-center gap-[2px] p-2"
-        onClick={toggle}
-      >
+      <div className="relative flex items-center gap-1 p-2" onClick={toggle}>
         <Icons.triangle
           className="w-4 h-5 pointer-events-none"
           transform={`${transIcon}`}
         />
-        <Button className="w-[200px]" btntype="nav">
+        <Button className="w-11/12" btntype="nav">
           <Icons.DB className="w-5 h-5" />
           {dbName}
         </Button>
       </div>
       <div className={` flex flex-col ${transClass}`}>
         {menuItems.map((item, index) => (
-          <Button className="w-56 py-2 pl-12 left-2" key={index} btntype="nav">
+          <Button
+            className="w-11/12 py-2 pl-12 left-2"
+            key={index}
+            btntype="nav"
+          >
             <Icons.Folder className="w-5 h-5" /> {item.title}
           </Button>
         ))}
